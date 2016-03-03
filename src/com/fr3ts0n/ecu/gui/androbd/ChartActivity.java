@@ -144,7 +144,7 @@ public class ChartActivity extends Activity
 	 * @param id id to get color for
 	 * @return color for given ID
 	 */
-	public static int getColor(int id)
+	public static int getPidColor(int id)
 	{
 		return colors[id % colors.length];
 	}
@@ -355,10 +355,10 @@ public class ChartActivity extends Activity
 			renderer.setYTitle(String.valueOf(currPv.get(EcuDataPv.FID_UNITS)), i);
 			renderer.setYAxisAlign(((i % 2) == 0) ? Align.LEFT : Align.RIGHT, i);
 			renderer.setYLabelsAlign(((i % 2) == 0) ? Align.LEFT : Align.RIGHT, i);
-			renderer.setYLabelsColor(i, getColor(pid));
+			renderer.setYLabelsColor(i, getPidColor(pid));
 			/* set up new line renderer */
 			XYSeriesRenderer r = new XYSeriesRenderer();
-			r.setColor(getColor(pid));
+			r.setColor(getPidColor(pid));
 			r.setStroke(getStroke(pid));
 			// register line renderer
 			renderer.addSeriesRenderer(i, r);
